@@ -1,7 +1,9 @@
+from stats import get_num_words
+
 def main():
     book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
-    num_words = get_word_count(text)
+    num_words = get_num_words(text)
     char_dictionary = get_chars_in_string(text)
     char_sorted = sort_chars_to_list(char_dictionary)
 
@@ -20,9 +22,7 @@ def get_book_text(path):
     with open(path) as f:
         return f.read()
     
-def get_word_count(text):
-    words = text.split()
-    return len(words)
+
 
 def get_chars_in_string(text):
     chars = {}
